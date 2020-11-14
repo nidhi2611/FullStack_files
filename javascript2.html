@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Dialouge Boxes</title>
+</head>
+<body>
+		<button id="btn">Click Me to have an alert</button>
+		<button  onclick="callMe()">INTERNAL JS</button>
+		<button onclick="welcome()">move forward</button>
+		<button onclick="sum()">Calculate sum</button>
+		<script type="text/javascript">
+			var x=document.getElementById('btn');
+			x.onclick=function () {
+				alert("Button is clicked");
+			}
+			function callMe(){
+				var x=30;
+				var y=30;
+				alert(x+y);
+			}
+
+			function welcome(){
+				var name=prompt("enter your name");
+				if(name.length>0 && name!="null")
+					alert('Welcome '+name);
+				else
+					alert ('Welcome anonymous');
+			}
+			function sum(){
+				var x=parseInt(prompt('Enter the first number'));
+				var y=parseInt(prompt('enter the second number'));
+				if((x+y)>50)
+					alert((x+y));
+				else
+					alert('you are bad');
+			}
+		</script>
+</body>
+</html>
