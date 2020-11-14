@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Events</title>
+	<style type="text/css">
+		#container{
+			width:300px;
+			height:200px;
+			background-color: blue;
+			margin:0px auto;
+		}
+		button{
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+
+		}
+	</style>
+</head>
+<body>
+		<div id="container"></div>
+		<!--     1.     INLINE EVENT BINDING         -->
+		<button onclick="colorMe()">Click Me</button>    
+		<!--........................................-->
+
+
+		<script type="text/javascript">
+			// 2. second way-DOM LEVEL I
+			// var btn=documemt.querySelector('button');
+			//btn.onclick=colorMe;
+
+			function colorMe(){
+				var x=document.getElementById("container");
+				x.style.background ="red";
+			}
+
+			//3. DOM LEVEL II 
+			var y=document.getElementById("container");
+			y.addEventListener("click",function(){
+				document.getElementById('container').style.background="red";
+			});
+			y.addEventListener("click",function(){
+				document.getElementById('container').style.border="10px solid yellow";
+			});
+		</script>
+		<!-- SO YOU OBSERVE THAT ON CLICKING THE CLICK ME BUTTON ONLY ONE FUNCTION CAN BE EXCECUTED ,BUT USING DOM LEVEL 2 AS MANY FUNCTIONS CAN BE EXCECUTED-->
+</body>
+</html>
