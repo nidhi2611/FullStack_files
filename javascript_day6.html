@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Access</title>
+</head>
+<body>
+	<div id="container">
+		This is a first text.
+		<p id="para1" class="para">This is a paragraph.</p>
+		This is the second text.
+		<h1 class="heading_for_my_sake">This is a heading.</h1>
+		<ul>
+			<li>list</li>
+			<li>List</li>
+			<li>list</li>
+		</ul>
+		<p class="para" id="para2">This is another paragraph.</p>
+	</div>
+	<div id="blog">
+		<p>Hii this is <strong>Nidhi Gupta</strong> and I am trying			 to learn <i>Javascript</i></p>
+	</div>
+	<script type="text/javascript">
+		//to access indivisual element use getElementById when id is specified along with the element
+		var x=document.getElementById('para1');
+		console.log(x);
+		//to select the elemnt by its identity
+		var y=document.querySelector('p');
+		console.log(y);//this will return only the first para although there are two paragraphs.
+		var z=document.querySelector('#para2');
+		console.log(z);//finding element using id
+		var a=document.querySelector('.para');
+		console.log(a);//finding element using class-->will display only the first paragraph having class para
+
+
+		//for selecting more than one node at a time
+		var abc=document.querySelectorAll('.para');
+		console.log(abc);
+		abc[1].innerHTML="yeh h mera paragraph";
+
+		// to add id to a element
+		var gogetter=document.querySelectorAll('li');
+		gogetter[1].setAttribute("id","list1");
+		// to add class to the element
+		gogetter[0].classList.add("list-class");
+
+		// to check the classes an element contain is:
+		console.log(gogetter[0].classList);
+
+		//to remove a class from the element
+		document.querySelector('h1').classList.remove("heading_for_my_sake");
+
+		// to check the child node of an element
+		var c=document.getElementById('container');
+		console.log(c.childNodes);
+
+		// to access any child
+		c.childNodes[2].textContent="changed";
+
+		//to check the difference between the three types of ways to catch the text of the element
+		var catcher=document.getElementById('blog');
+		console.log(catcher.innerHTML);
+		console.log(catcher.innertext);
+		console.log(catcher.textContent);
+	</script>
+</body>
+</html>
